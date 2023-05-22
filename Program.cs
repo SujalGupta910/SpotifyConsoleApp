@@ -21,7 +21,7 @@ namespace Sandbox{
         }
         public static async Task Main(String[] args){
             var config = SpotifyClientConfig.CreateDefault();
-            var request = new ClientCredentialsRequest("3e54e2cabe2c486f82158c4e37fcf66b","cf95b0ed1c9644bd97c7fc71dd6869fe");
+            var request = new ClientCredentialsRequest("Client_id","Client_secret");
             var response = await new OAuthClient(config).RequestToken(request);
             
             var spotify = new SpotifyClient(config.WithToken(response.AccessToken));
